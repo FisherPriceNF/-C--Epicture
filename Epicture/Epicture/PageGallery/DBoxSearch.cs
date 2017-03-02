@@ -3,6 +3,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml;
 using System;
 using System.Diagnostics;
+using Windows.UI;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace Epicture
 {
@@ -64,10 +66,15 @@ namespace Epicture
         {
             this._text_search = new TextBox();
             this._text_search.Name = "text_search";
+            this._text_search.FontFamily = new FontFamily("Segeo UI");
             this._text_search.TextWrapping = TextWrapping.Wrap;
+            this._text_search.TextAlignment = TextAlignment.Justify;
             this._text_search.Text = "";
-            this._text_search.Height = 34;
-            this._text_search.Margin = new Thickness(20/*Left*/, 20/*Top*/, 20/*Right*/, 10/*Bottom*/);
+            this._text_search.Height = 33;
+            this._text_search.Margin = new Thickness(20/*Left*/, 20/*Top*/, 20/*Right*/, 17/*Bottom*/);
+            SolidColorBrush colorFondText = new SolidColorBrush();
+            colorFondText.Color = Color.FromArgb(255, 48, 139, 87);
+            this._text_search.Background = colorFondText;
             this._text_search.VerticalAlignment = VerticalAlignment.Center;
             if (this._principal != null)
             {
@@ -80,8 +87,10 @@ namespace Epicture
         {
             this._btn_search = new Button();
             this._btn_search.Name = "btn_search";
-            this._btn_search.Content = "Search";
             this._btn_search.Click += _btn_search_Click;
+            Image image = new Image();
+            image.Source = new BitmapImage(new Uri("https://cdn.pixabay.com/photo/2014/04/03/00/39/magnifying-308995_960_720.png"));
+            this._btn_search.Content = image;
             this._btn_search.VerticalAlignment = VerticalAlignment.Center;
             this._btn_search.HorizontalAlignment = HorizontalAlignment.Center;
 
@@ -96,6 +105,10 @@ namespace Epicture
         private void _btn_search_Click(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("Button search Click a été click.");
+            if (this._text_search.Text != "")
+            {
+                Debug.WriteLine("Info search: " + this._text_search.Text);
+            }
         }
     }
 }

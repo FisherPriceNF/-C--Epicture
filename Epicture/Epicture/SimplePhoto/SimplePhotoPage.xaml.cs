@@ -12,57 +12,51 @@ namespace Epicture
     /// </summary>
     public sealed partial class SimplePhotoPage : Page
     {
-        Grid _principal;
-        DBoxImage _image;
-        DTitleImage _title;
-        DBoxFavori _favori;
+        private DBoxImage _image;
+        private DTitleImage _title;
+        private DBoxFavori _favori;
+        private MainPage _page; 
 
-        public SimplePhotoPage(string name, string path)
+        public SimplePhotoPage(string name, string path, ref MainPage page)
         {
             this.InitializeComponent();
-            this.initGridPrincipal();
 
+            this.setColum();
             SolidColorBrush colorBoxImage = new SolidColorBrush();
-            colorBoxImage.Color = Color.FromArgb(255, 255, 0, 0);
-            _image = new DBoxImage("BoxImage", _principal, 0, colorBoxImage);
+            colorBoxImage.Color = Color.FromArgb(255, 48, 139, 87);
+            _image = new DBoxImage("BoxImage", ref Principal, 1, colorBoxImage);
 
             SolidColorBrush colorTitleImage = new SolidColorBrush();
-            colorTitleImage.Color = Color.FromArgb(255, 0, 102, 204);
-            _title = new DTitleImage("Title", _principal, 1, colorTitleImage);
+            colorTitleImage.Color = Color.FromArgb(255, 0, 128, 0);
+            _title = new DTitleImage("Title", ref Principal, 0, colorTitleImage);
 
             SolidColorBrush colorBoxFavori = new SolidColorBrush();
-            colorBoxFavori.Color = Color.FromArgb(255, 204, 0, 204);
-            _favori = new DBoxFavori("BoxFavori", _principal, 2, colorBoxFavori);
+            colorBoxFavori.Color = Color.FromArgb(255, 0, 128, 0);
+            _favori = new DBoxFavori("BoxFavori", ref Principal, 2, colorBoxFavori, ref page);
+
+            _image.display(path);
+            _title.setContent(name);
         }
 
-        private void initGridPrincipal()
+        private void setColum()
         {
-            this._principal = new Grid();
-            _principal.Name = "SimplePhoto";
-            _principal.Background = new SolidColorBrush(Colors.Red);
-            _principal.Width = double.NaN;
-            _principal.Height = double.NaN;
+          
+            RowDefinition rowTitle = new RowDefinition();
+            rowTitle.Height = new GridLength(1, GridUnitType.Star);
+            Principal.RowDefinitions.Add(rowTitle);
 
-            RowDefinition rowBoxSearch = new RowDefinition();
-            rowBoxSearch.Height = new GridLength(0, GridUnitType.Star);
-            _principal.RowDefinitions.Add(rowBoxSearch);
+            RowDefinition rowImage = new RowDefinition();
+            rowImage.Height = new GridLength(10, GridUnitType.Star);
+            Principal.RowDefinitions.Add(rowImage);
 
-            RowDefinition rowGallery = new RowDefinition();
-            rowGallery.Height = new GridLength(10, GridUnitType.Star);
-            _principal.RowDefinitions.Add(rowGallery);
-
-            RowDefinition rowBoxUpload = new RowDefinition();
-            rowBoxUpload.Height = new GridLength(0, GridUnitType.Star);
-            _principal.RowDefinitions.Add(rowBoxUpload);
-            if (this.Parent != null)
-            {
-
-            }
+            RowDefinition rowButton = new RowDefinition();
+            rowButton.Height = new GridLength(1, GridUnitType.Star);
+            Principal.RowDefinitions.Add(rowButton);
         }
 
-        public void Page_Loaded(object sender, RoutedEventArgs e)
+        public void  navigationMainPage()
         {
-
+            Frame.Navigate(typeof(MainPage));
         }
     }
 }

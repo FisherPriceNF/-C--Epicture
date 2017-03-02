@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Epicture.HomePage;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,6 +24,17 @@ namespace Epicture
     /// </summary>
     sealed partial class App : Application
     {
+       public static MainPage _mainpage;
+
+        private static bool IsMobileDevice
+        {
+            get
+            {
+                var quali = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().QualifierValues;
+                return (quali.ContainsKey("DeviceFamily") && quali["DeviceFamily"] == "Mobile");
+            }
+        }
+        
         /// <summary>
         /// Initialise l'objet d'application de singleton.  Il s'agit de la première ligne du code créé
         /// à être exécutée. Elle correspond donc à l'équivalent logique de main() ou WinMain().
@@ -57,9 +69,22 @@ namespace Epicture
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
+                /* if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
+                 {
+                     //TODO: chargez l'état de l'application précédemment suspendue
+                 }*/
+
+                if (IsMobileDevice == true)
                 {
-                    //TODO: chargez l'état de l'application précédemment suspendue
+
+                    if (e.PreviousExecutionState != ApplicationExecutionState.Running)
+                    {
+                        bool loadState = (e.PreviousExecutionState == ApplicationExecutionState.Terminated);
+                        ExtendedSplash extendedSplash = new ExtendedSplash(e.SplashScreen, loadState);
+                        rootFrame.Content = extendedSplash;
+                        Window.Current.Content = rootFrame;
+                    }
+
                 }
 
                 // Placez le frame dans la fenêtre active
@@ -73,6 +98,8 @@ namespace Epicture
                     // Quand la pile de navigation n'est pas restaurée, accédez à la première page,
                     // puis configurez la nouvelle page en transmettant les informations requises en tant que
                     // paramètre
+                    //_mainpage = new MainPage();
+                    //rootFrame.Content = _mainpage;       
                     rootFrame.Navigate(typeof(MainPage), e.Arguments);
                 }
                 // Vérifiez que la fenêtre actuelle est active
@@ -97,10 +124,11 @@ namespace Epicture
         /// </summary>
         /// <param name="sender">Source de la requête de suspension.</param>
         /// <param name="e">Détails de la requête de suspension.</param>
-        private void OnSuspending(object sender, SuspendingEventArgs e)
+        private async void OnSuspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: enregistrez l'état de l'application et arrêtez toute activité en arrière-plan
+            await SuspensionManager.SaveAsync();
             deferral.Complete();
         }
     }

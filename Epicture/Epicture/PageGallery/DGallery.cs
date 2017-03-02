@@ -2,47 +2,45 @@
 using System.Diagnostics;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
+using System.Collections.ObjectModel;
 using Windows.UI.Xaml;
-using System.Collections.Generic;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.Storage.Pickers;
-using Windows.Storage;
-using Windows.Storage.AccessCache;
-using Windows.UI.Xaml.Media.Imaging;
-using System.Linq;
-using Windows.UI;
 
 namespace Epicture
 {
     class DGallery
     {
         private Grid _principal;
-        private ScrollViewer _scrollbar;
-        private List<Photo> _gallery;
-        private double _sizePhoto;
-        private int _line;
-        private int _column;
-        private int _columMax;
+        private ObservableCollection<Grid> _list;
+        private GridView _gridView;
+        private MainPage _page;
+        private Grid _parent;
+        private SolidColorBrush _color;
+        private int _position;
+        private string nameGrid;
 
         // --- Constructeur
-        public DGallery(String name, ref Grid parent, int row, SolidColorBrush color)
+        public DGallery(String name, ref Grid parent, int row, SolidColorBrush color, MainPage page)
         {
-            _gallery = new List<Photo>();
-            _line = 0;
-            _column = 0;
-            _columMax = 3;
-            //_sizePhoto = 400;
-            _sizePhoto = Window.Current.Bounds.Width / 3 * (4 / 3);
-            Window.Current.SizeChanged += Current_SizeChanged;
-            initGridPrincipal(name, ref parent, color, row);
-            initScollbar(this._principal);
+
+            this.nameGrid = name;
+            this._parent = parent;
+            this._position = row;
+            this._color = color;
+            this._page = page;
+            initGridPrincipal();
+            _list = new ObservableCollection<Grid>();
+            initGridView();
             addAllItems();
+        }
 
-
+        public void addPhoto(String name, String path)
+        {
+            Photo newPhoto = new Photo(name, path, ref this._page);
+            _list.Add(newPhoto.Principal);
         }
 
         // Fonction Event sur un resize de la fenêtre.
-        private void Current_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
+        /*private void Current_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
         {
             _sizePhoto = Window.Current.Bounds.Width / 3 * (4 / 3);
             this._principal.Height = (this._gallery.Count / _columMax + 1) * _sizePhoto;
@@ -51,108 +49,51 @@ namespace Epicture
                 item.WidthPrincipal = Window.Current.Bounds.Width / 3;
                 item.HeightPrincipal = Window.Current.Bounds.Width / 3;
             }
-        }
+        }*/
 
-        private void OnItemClick(object element, GridClickEventArgs e)
+        private void initGridView()
         {
-            
+            _gridView = new GridView();
+            _gridView.Name = this.nameGrid;
+            _gridView.Background = this._color;
+            _gridView.ItemsSource = this._list;
+            _gridView.VerticalAlignment = VerticalAlignment.Stretch;
+            _gridView.HorizontalAlignment = HorizontalAlignment.Stretch;
+
+            if (this._principal != null)
+            {
+                this._principal.Children.Add(_gridView);
+            }
         }
 
         // --- Fonction Initilisation
-        private void initGridPrincipal(String name, ref Grid parent, SolidColorBrush color, int row)
+        private void initGridPrincipal()
         {
             this._principal = new Grid();
-            this._principal.Name = name;
-            _principal.Background = color;
-            this._principal.Height = (this._gallery.Count / _columMax + 1) * _sizePhoto;
+            this._principal.Name = this.nameGrid;
+            _principal.Background = this._color;
             this._principal.Width = double.NaN;
 
-            ColumnDefinition Column1 = new ColumnDefinition();
-            Column1.Width = new GridLength(1, GridUnitType.Star);
-            _principal.ColumnDefinitions.Add(Column1);
-
-            ColumnDefinition Column2 = new ColumnDefinition();
-            Column2.Width = new GridLength(1, GridUnitType.Star);
-            _principal.ColumnDefinitions.Add(Column2);
-
-            ColumnDefinition Column3 = new ColumnDefinition();
-            Column3.Width = new GridLength(1, GridUnitType.Star);
-            _principal.ColumnDefinitions.Add(Column3);
-
-            for (int i = 0; i < this._gallery.Count / _columMax + 1; i++)
+            if (this._parent != null)
             {
-                addLigne();
+                Grid.SetRow(this._principal, this._position);
+                this._parent.Children.Add(this._principal);
             }
-
-            if (parent != null)
-            {
-                Grid.SetRow(this._principal, row);
-                parent.Children.Add(this._principal);
-            }
-        }
-
-        private void initScollbar(Grid parent)
-        {
-            _scrollbar = new ScrollViewer();
-            //_scrollbar.Orientation = Orientation.Vertical;
-            _scrollbar.Width = 10;
-            SolidColorBrush color = new SolidColorBrush();
-            color.Color = Colors.Black;
-            _scrollbar.Background = color;
-            _scrollbar.Visibility = Visibility.Visible;
-            _scrollbar.HorizontalAlignment = HorizontalAlignment.Right;
-            _scrollbar.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
-            if (parent != null)
-            {
-                parent.Children.Add(_scrollbar);
-            }
-        }
-
-        // Fonction pour ajouter une Photo.
-        public void addPhoto(String name , String path)
-        {
-            if (this._gallery.Count % _columMax == 0)
-            {
-                addLigne();
-                this._principal.Height = (this._gallery.Count / _columMax + 1) * _sizePhoto;
-            }
-            Photo _newPhoto = new Photo(name, path, ref this._principal);
-            Grid.SetColumn(_newPhoto.getPrincipal(), _column);
-            Grid.SetRow(_newPhoto.getPrincipal(), _line);
-            _newPhoto.display(ref this._principal);
-
-            Debug.WriteLine("column :" + _column + " |line : " + _line);
-            _column++;
-            if (_column % _columMax == 0)
-            {
-                _column= 0;
-                _line++;
-            }
-
-            this._gallery.Add(_newPhoto);
-        }
-
-        private void addLigne()
-        {
-            RowDefinition newRow = new RowDefinition();
-            newRow.Height = new GridLength(1, GridUnitType.Star);
-            newRow.MinHeight = 100;
-            _principal.RowDefinitions.Add(newRow);
-            
         }
 
         private void addAllItems()
         {
-            int _nbr_photo = 9;
-            int nbr_choix = 0;
+            int _nbr_photo = 10;
+            int nbr_choix = 6;
             int _nbr_random = 0;
             string _name = "Image ";
             string _lien = "";
 
             for (int i = 0; i <= _nbr_photo; i++)
             {
-                Random r = new Random(20);
-                _nbr_random = r.Next(0, nbr_choix);
+                int graine = DateTime.Now.Millisecond;
+                Random r = new Random(graine);
+                _nbr_random = r.Next(nbr_choix);
 
                 Debug.WriteLine("Choix lien: " + _nbr_random);
                 switch (_nbr_random)
@@ -180,6 +121,11 @@ namespace Epicture
                     case 5:
                         {
                             _lien = @"https://img.hebus.com/hebus_2011/07/14/preview/110714221335_45.jpg";
+                            break;
+                        }
+                    case 6:
+                        {
+                            _lien = @"http://www.fond-ecran-hd.net/pc-driver/1216.jpg";
                             break;
                         }
                     default:

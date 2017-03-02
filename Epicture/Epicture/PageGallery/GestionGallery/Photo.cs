@@ -10,6 +10,7 @@ using Windows.Storage.Streams;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 
@@ -18,12 +19,12 @@ namespace Epicture
     class Photo
     {
         private Grid _principal;
-        private Grid _grid;
         private TextBlock _title;
         private Image _image;
         private String _name;
         private String _path;
         private double[] _size;
+        private MainPage _page;
 
         public double WidthPrincipal
         {
@@ -43,13 +44,20 @@ namespace Epicture
             }
         }
 
-        public Photo(String name, String path, ref Grid Parent)
+        public Grid Principal
+        {
+            get
+            {
+                return _principal;
+            }
+        }
+
+        public Photo(String name, String path, ref MainPage page)
         {
             this._name = name;
             this._path = path;
-            // Window.Current.Bounds.Height
+            this._page = page;
             this._size = new double[] { Window.Current.Bounds.Width / 3, Window.Current.Bounds.Width / 3 };
-            //this._size = new double[] { 300, 300};
             initGridPrincipal();
             initImage();
             initTextBox();
@@ -65,31 +73,16 @@ namespace Epicture
             return this._principal;
         }
 
-        public Grid display(ref Grid parent)
-        {
-            this._title.Text = this._name;
-            this.LoadImage();
-            
-            if (parent != null)
-            {
-                parent.Children.Add(this._principal);
-            }
-            return this._principal;
-        }
-
         private void initGridPrincipal()
         {
             this._principal = new Grid();
             this._principal.Name = this._name;
             this._principal.Width = _size[0];
             this._principal.Height = _size[1];
+            this._principal.PointerPressed += PointerPressed;
 
             SolidColorBrush color = new SolidColorBrush();
-            Random r = new Random();
-            byte red = (byte)r.Next(0, 255);
-            byte green = (byte)r.Next(0, 255);
-            byte blue = (byte)r.Next(0, 255);
-            color.Color = Color.FromArgb(255, red, green, blue);
+            color.Color = Color.FromArgb(255, 48, 139, 87);
             this._principal.Background = color;
 
             RowDefinition rowBoxPhoto = new RowDefinition();
@@ -101,7 +94,23 @@ namespace Epicture
             _principal.RowDefinitions.Add(rowTitle);
         }
 
-        
+        private void PointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            Debug.WriteLine("J'ai click sur " + this._name + " de path :" + _path + " .");
+
+            var Frame = Window.Current.Content as Frame;
+            if (Frame != null)
+            {
+                SimplePhotoPage page = new SimplePhotoPage(this._name, this._path, ref this._page);
+                Frame.Content = page;
+                Window.Current.Content = Frame;
+                if (Frame.Content == null)
+                {
+                    Frame.Navigate(typeof(SimplePhotoPage));
+                }
+            }
+        }
+
         private void initTextBox()
         {
             this._title = new TextBlock();
@@ -127,23 +136,15 @@ namespace Epicture
             this._image.MaxWidth = _size[0];
             this._image.MaxHeight = _size[1] - 20;
             this._image.Stretch = Stretch.Fill;
-            if (this._principal != null)
-            {
-                Grid.SetRow(this._image, 0);
-                _principal.Children.Add(this._image);
-            }
-        }
-
-        private async void LoadImage()
-        {
             if (this._path != null)
             {
                 this._image.Source = new BitmapImage(new Uri(_path));
                 this._image.Visibility = Visibility.Visible;
-            } 
-            else
+            }
+            else { Debug.WriteLine("The path is null"); }
+            if (this._principal != null)
             {
-                Debug.WriteLine("The path is null.");
+                _principal.Children.Add(this._image);
             }
         }
     }

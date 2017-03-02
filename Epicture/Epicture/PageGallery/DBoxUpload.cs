@@ -3,6 +3,9 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 using System.Diagnostics;
+using Windows.UI.Xaml.Media.Imaging;
+using Windows.Storage.Pickers;
+using Windows.Storage;
 
 namespace Epicture
 {
@@ -10,6 +13,8 @@ namespace Epicture
     {
         private Grid _principal;
         private Button _btn_upload;
+        private bool _explorateur_windows;
+        private StorageFile _file_upload;
 
         // --- Constructeur
         public DBoxUpload(String name, ref Grid parent, int row, SolidColorBrush color)
@@ -44,7 +49,9 @@ namespace Epicture
         {
             this._btn_upload = new Button();
             this._btn_upload.Name = "btn_upload";
-            this._btn_upload.Content = "Upload";
+            Image image = new Image();
+            image.Source = new BitmapImage(new Uri("http://www.icone-png.com/png/2/1785.png"));
+            this._btn_upload.Content = image;
             this._btn_upload.VerticalAlignment = VerticalAlignment.Center;
             this._btn_upload.HorizontalAlignment = HorizontalAlignment.Center;
             this._btn_upload.Click += _btn_upload_Click;
@@ -57,7 +64,32 @@ namespace Epicture
 
         private void _btn_upload_Click(object sender, RoutedEventArgs e)
         {
-            Debug.WriteLine("Button upload Click a été click.");
+            if (this._explorateur_windows == false)
+            {
+                Debug.WriteLine("Button upload Click a été click.");
+                RecupererFile();
+            }
+            
+        }
+
+        private async void RecupererFile()
+        {
+            this._explorateur_windows = true;
+            var filePicker = new FileOpenPicker();
+            filePicker.ViewMode = PickerViewMode.Thumbnail;
+            filePicker.FileTypeFilter.Add(".jpeg");
+            filePicker.FileTypeFilter.Add(".jpg");
+            filePicker.FileTypeFilter.Add(".png");
+
+            this._file_upload = await filePicker.PickSingleFileAsync();
+
+            if (this._file_upload != null)
+            {
+                Debug.WriteLine("Name file: " + this._file_upload.Name);
+                Debug.WriteLine("Name file:" + this._file_upload.Path);
+                this._explorateur_windows = false;
+            }
+            this._explorateur_windows = false;
         }
     }
 }

@@ -197,3 +197,8 @@ C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\obj\x86\Debug\Pa
 C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\obj\x86\Debug\SimplePhoto\SimplePhotoPage.xbf
 C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\obj\x86\Debug\PageGallery\MainPage.xbf
 C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\obj\x86\Debug\Epicture.csprojResolveAssemblyReference.cache
+C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\obj\x86\Debug\HomePage\ExtendedSplash.g.i.cs
+C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\obj\x86\Debug\HomePage\ExtendedSplash.g.cs
+C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\obj\x86\Debug\HomePage\ExtendedSplash.xaml
+C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\obj\x86\Debug\HomePage\ExtendedSplash.xbf
+C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\bin\x86\Debug\HomePage\ExtendedSplash.xbf

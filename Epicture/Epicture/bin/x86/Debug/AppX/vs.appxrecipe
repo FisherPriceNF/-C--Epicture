@@ -16,7 +16,7 @@
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>2A2AEE801D9EEA03D96A3F6EE564C6740543E432DA1EF7E8E921B8F118A87064</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>583960C8ADB234E1EB0FDD977571BD1FFA1DE8D9745FAB40F4D19DE80302DA4E</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>d4c92d49-8e90-4f6b-8e5c-d2ebb85ca3cf_1.0.0.0_x86__dsj1mdtzvny08</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>d4c92d49-8e90-4f6b-8e5c-d2ebb85ca3cf_dsj1mdtzvny08!App</RegisteredUserModeAppID>
     <RegisteredPackageID>d4c92d49-8e90-4f6b-8e5c-d2ebb85ca3cf</RegisteredPackageID>
@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-02-27T01:13:18.254</Modified>
+      <Modified>2017-03-02T15:09:57.355</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\bin\x86\Debug\Epicture.exe">
       <PackagePath>entrypoint\Epicture.exe</PackagePath>
-      <Modified>2017-02-27T01:13:17.962</Modified>
+      <Modified>2017-03-02T15:09:55.190</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -448,9 +448,34 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2015-07-22T21:11:12.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\BadgeLogo.scale-100.jpg">
+      <PackagePath>Assets\BadgeLogo.scale-100.jpg</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T15:07:35.802</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\BadgeLogo.scale-125.jpg">
+      <PackagePath>Assets\BadgeLogo.scale-125.jpg</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T15:08:25.093</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\BadgeLogo.scale-150.jpg">
+      <PackagePath>Assets\BadgeLogo.scale-150.jpg</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T15:08:51.258</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\BadgeLogo.scale-200.jpg">
+      <PackagePath>Assets\BadgeLogo.scale-200.jpg</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T15:07:53.850</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\BadgeLogo.scale-400.jpg">
+      <PackagePath>Assets\BadgeLogo.scale-400.jpg</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T15:08:01.451</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\bloggif_58b0d42085709.jpg">
       <PackagePath>Assets\bloggif_58b0d42085709.jpg</PackagePath>
-      <Modified>2017-02-25T00:47:49.422</Modified>
+      <Modified>2017-03-02T00:21:46.469</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\ecran_demarrage_1240x600.png">
       <PackagePath>Assets\ecran_demarrage_1240x600.png</PackagePath>
@@ -460,10 +485,180 @@
       <PackagePath>Assets\Epicture.png</PackagePath>
       <Modified>2017-02-25T16:51:40.078</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T15:05:54.575</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\SplashScreen.scale-125.png">
+      <PackagePath>Assets\SplashScreen.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T02:17:30.272</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\SplashScreen.scale-150.png">
+      <PackagePath>Assets\SplashScreen.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T02:16:56.409</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\SplashScreen.scale-400.png">
+      <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T02:25:02.163</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square150x150Logo.scale-100.png">
+      <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:54:16.706</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square150x150Logo.scale-125.png">
+      <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:53:54.822</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square150x150Logo.scale-150.png">
+      <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:53:42.078</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square150x150Logo.scale-400.png">
+      <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:51:07.579</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square310x310Logo.scale-100.png">
+      <PackagePath>Assets\Square310x310Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:56:16.334</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square310x310Logo.scale-125.png">
+      <PackagePath>Assets\Square310x310Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:52:02.839</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square310x310Logo.scale-150.png">
+      <PackagePath>Assets\Square310x310Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:51:28.544</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square310x310Logo.scale-200.png">
+      <PackagePath>Assets\Square310x310Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:50:40.705</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square310x310Logo.scale-400.png">
+      <PackagePath>Assets\Square310x310Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:50:23.375</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square44x44Logo.scale-100.png">
+      <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:49:40.910</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square44x44Logo.scale-125.png">
+      <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:55:42.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square44x44Logo.scale-150.png">
+      <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:55:26.371</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square44x44Logo.scale-400.png">
+      <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:54:03.199</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square44x44Logo.targetsize-16.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:56:09.558</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square44x44Logo.targetsize-24.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:50:11.541</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square44x44Logo.targetsize-256.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:53:30.660</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square44x44Logo.targetsize-48.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:49:19.731</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square71x71Logo.scale-100.png">
+      <PackagePath>Assets\Square71x71Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:55:10.271</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square71x71Logo.scale-125.png">
+      <PackagePath>Assets\Square71x71Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:54:48.909</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square71x71Logo.scale-150.png">
+      <PackagePath>Assets\Square71x71Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:54:36.595</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square71x71Logo.scale-200.png">
+      <PackagePath>Assets\Square71x71Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:54:28.791</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square71x71Logo.scale-400.png">
       <PackagePath>Assets\Square71x71Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-02-23T01:27:02.844</Modified>
+      <Modified>2017-03-02T05:53:21.096</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T06:03:09.934</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\StoreLogo.scale-125.png">
+      <PackagePath>Assets\StoreLogo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T06:03:36.418</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\StoreLogo.scale-150.png">
+      <PackagePath>Assets\StoreLogo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T06:03:41.344</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\StoreLogo.scale-200.png">
+      <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T06:03:47.381</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\StoreLogo.scale-400.png">
+      <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T06:03:52.552</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Wide310x150Logo.scale-100.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:53:00.146</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Wide310x150Logo.scale-125.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:52:18.332</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Wide310x150Logo.scale-150.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:51:45.134</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Wide310x150Logo.scale-400.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-03-02T05:50:31.701</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -472,17 +667,17 @@
     <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-02-23T00:15:06.251</Modified>
+      <Modified>2017-03-02T02:18:49.645</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-02-23T01:28:32.491</Modified>
+      <Modified>2017-03-02T05:53:12.136</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-02-23T01:32:57.558</Modified>
+      <Modified>2017-03-02T05:54:59.115</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
@@ -497,7 +692,7 @@
     <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-02-23T01:29:50.077</Modified>
+      <Modified>2017-03-02T05:50:52.123</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -505,7 +700,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\bin\x86\Debug\Epicture.xr.xml">
       <PackagePath>Epicture.xr.xml</PackagePath>
-      <Modified>2017-02-26T17:41:09.889</Modified>
+      <Modified>2017-03-02T12:40:55.648</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -514,11 +709,11 @@
     <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-02-26T17:41:10.617</Modified>
+      <Modified>2017-03-02T15:09:56.542</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\bin\x86\Debug\Core\Epicture.exe">
       <PackagePath>Epicture.exe</PackagePath>
-      <Modified>2017-02-27T01:13:18.250</Modified>
+      <Modified>2017-03-02T15:09:57.348</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
