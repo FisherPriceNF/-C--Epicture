@@ -1,4 +1,4 @@
 App.xbf
-HomePage\ExtendedSplash.xbf
-PageGallery\MainPage.xbf
-SimplePhoto\SimplePhotoPage.xbf
+PageApp\HomePage\ExtendedSplash.xbf
+PageApp\PageGallery\MainPage.xbf
+PageApp\SimplePhoto\SimplePhotoPage.xbf

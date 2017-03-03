@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-02T15:09:57.355</Modified>
+      <Modified>2017-03-02T16:34:10.676</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\bin\x86\Debug\Epicture.exe">
       <PackagePath>entrypoint\Epicture.exe</PackagePath>
-      <Modified>2017-03-02T15:09:55.190</Modified>
+      <Modified>2017-03-02T16:34:09.503</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -709,11 +709,11 @@
     <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-02T15:09:56.542</Modified>
+      <Modified>2017-03-02T16:34:10.348</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nicolas Fontanet\Desktop\C#\Epicture\Epicture\Epicture\bin\x86\Debug\Core\Epicture.exe">
       <PackagePath>Epicture.exe</PackagePath>
-      <Modified>2017-03-02T15:09:57.348</Modified>
+      <Modified>2017-03-02T16:34:10.671</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
