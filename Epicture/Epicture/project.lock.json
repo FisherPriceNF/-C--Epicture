@@ -3,6 +3,30 @@
   "version": 2,
   "targets": {
     "UAP,Version=v10.0": {
+      "Auth0.Windows.UWP/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "8.0.2"
+        },
+        "compile": {
+          "lib/uap10.0/Auth0.LoginClient.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Auth0.LoginClient.dll": {}
+        }
+      },
+      "Imgur.API/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "7.0.1"
+        },
+        "compile": {
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/Imgur.API.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/Imgur.API.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -1889,6 +1913,30 @@
       }
     },
     "UAP,Version=v10.0/win10-arm": {
+      "Auth0.Windows.UWP/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "8.0.2"
+        },
+        "compile": {
+          "lib/uap10.0/Auth0.LoginClient.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Auth0.LoginClient.dll": {}
+        }
+      },
+      "Imgur.API/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "7.0.1"
+        },
+        "compile": {
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/Imgur.API.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/Imgur.API.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -3641,6 +3689,30 @@
       }
     },
     "UAP,Version=v10.0/win10-arm-aot": {
+      "Auth0.Windows.UWP/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "8.0.2"
+        },
+        "compile": {
+          "lib/uap10.0/Auth0.LoginClient.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Auth0.LoginClient.dll": {}
+        }
+      },
+      "Imgur.API/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "7.0.1"
+        },
+        "compile": {
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/Imgur.API.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/Imgur.API.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -5350,6 +5422,30 @@
       }
     },
     "UAP,Version=v10.0/win10-x64": {
+      "Auth0.Windows.UWP/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "8.0.2"
+        },
+        "compile": {
+          "lib/uap10.0/Auth0.LoginClient.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Auth0.LoginClient.dll": {}
+        }
+      },
+      "Imgur.API/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "7.0.1"
+        },
+        "compile": {
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/Imgur.API.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/Imgur.API.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -7111,6 +7207,30 @@
       }
     },
     "UAP,Version=v10.0/win10-x64-aot": {
+      "Auth0.Windows.UWP/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "8.0.2"
+        },
+        "compile": {
+          "lib/uap10.0/Auth0.LoginClient.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Auth0.LoginClient.dll": {}
+        }
+      },
+      "Imgur.API/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "7.0.1"
+        },
+        "compile": {
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/Imgur.API.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/Imgur.API.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -8820,6 +8940,30 @@
       }
     },
     "UAP,Version=v10.0/win10-x86": {
+      "Auth0.Windows.UWP/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "8.0.2"
+        },
+        "compile": {
+          "lib/uap10.0/Auth0.LoginClient.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Auth0.LoginClient.dll": {}
+        }
+      },
+      "Imgur.API/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "7.0.1"
+        },
+        "compile": {
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/Imgur.API.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/Imgur.API.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -10581,6 +10725,30 @@
       }
     },
     "UAP,Version=v10.0/win10-x86-aot": {
+      "Auth0.Windows.UWP/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "8.0.2"
+        },
+        "compile": {
+          "lib/uap10.0/Auth0.LoginClient.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Auth0.LoginClient.dll": {}
+        }
+      },
+      "Imgur.API/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "7.0.1"
+        },
+        "compile": {
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/Imgur.API.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/Imgur.API.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -12291,6 +12459,29 @@
     }
   },
   "libraries": {
+    "Auth0.Windows.UWP/1.1.0": {
+      "sha512": "933oGXSYFmd5OGkuSE4xGv2P26hvlovM+7Beida7pCRPLIhqA5wiU+Lz2dtFmTwFzXb4k5SwmVu3kmCsN1vMtg==",
+      "type": "package",
+      "files": [
+        "Auth0.Windows.UWP.1.1.0.nupkg.sha512",
+        "Auth0.Windows.UWP.nuspec",
+        "lib/uap10.0/Auth0.LoginClient.XML",
+        "lib/uap10.0/Auth0.LoginClient.dll",
+        "lib/uap10.0/Auth0.LoginClient.pdb",
+        "lib/uap10.0/Auth0.LoginClient.pri"
+      ]
+    },
+    "Imgur.API/3.0.1": {
+      "sha512": "sui+RoO3Qlw8quXdB0T6Mz3SeHsTAX4h7dLT4YJxzUSuiCzQb4KNRz0ZhJN052Z/f1PzYPaG+1Gn1kbXh90mLw==",
+      "type": "package",
+      "files": [
+        "Imgur.API.3.0.1.nupkg.sha512",
+        "Imgur.API.nuspec",
+        "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/Imgur.API.XML",
+        "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/Imgur.API.dll",
+        "tools/init.ps1"
+      ]
+    },
     "Microsoft.CSharp/4.0.0": {
       "sha512": "oWqeKUxHXdK6dL2CFjgMcaBISbkk+AqEg+yvJHE4DElNzS4QaTsCflgkkqZwVlWby1Dg9zo9n+iCAMFefFdJ/A==",
       "type": "package",
@@ -15583,6 +15774,8 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "Auth0.Windows.UWP >= 1.1.0",
+      "Imgur.API >= 3.0.1",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.1.0",
       "Newtonsoft.Json >= 9.0.1"
     ],

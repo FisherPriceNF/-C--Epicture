@@ -14,7 +14,6 @@ namespace Epicture
     /// </summary>
     sealed partial class App : Application
     {
-       public static MainPage _mainpage;
 
         private static bool IsMobileDevice
         {
@@ -90,7 +89,7 @@ namespace Epicture
                     // paramètre
                     //_mainpage = new MainPage();
                     //rootFrame.Content = _mainpage;       
-                    rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                    rootFrame.Navigate(typeof(Connection), e.Arguments);
                 }
                 // Vérifiez que la fenêtre actuelle est active
                 Window.Current.Activate();

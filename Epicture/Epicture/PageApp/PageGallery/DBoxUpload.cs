@@ -6,6 +6,10 @@ using System.Diagnostics;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.Storage.Pickers;
 using Windows.Storage;
+using Imgur.API.Authentication.Impl;
+using Imgur.API.Models;
+using System.IO;
+using Imgur.API.Endpoints.Impl;
 
 namespace Epicture.PageApp.PageGallery
 {
@@ -14,11 +18,14 @@ namespace Epicture.PageApp.PageGallery
         private Grid _principal;
         private Button _btn_upload;
         private bool _explorateur_windows;
-        private StorageFile _file_upload;
+        private string _clientID;
+        private string _clientSECRET;
 
         // --- Constructeur
-        public DBoxUpload(String name, ref Grid parent, int row, SolidColorBrush color)
+        public DBoxUpload(String name, ref Grid parent, int row, SolidColorBrush color, string clientID, string clientSECRET)
         {
+            _clientID = clientID;
+            _clientSECRET = clientSECRET;
             initGridPrincipal(name, ref parent, color, row);
             initButtom();
         }
@@ -74,6 +81,7 @@ namespace Epicture.PageApp.PageGallery
 
         private async void RecupererFile()
         {
+            StorageFile file_upload;
             this._explorateur_windows = true;
             var filePicker = new FileOpenPicker();
             filePicker.ViewMode = PickerViewMode.Thumbnail;
@@ -81,13 +89,17 @@ namespace Epicture.PageApp.PageGallery
             filePicker.FileTypeFilter.Add(".jpg");
             filePicker.FileTypeFilter.Add(".png");
 
-            this._file_upload = await filePicker.PickSingleFileAsync();
+            file_upload = await filePicker.PickSingleFileAsync();
 
-            if (this._file_upload != null)
+            if (file_upload != null)
             {
-                Debug.WriteLine("Name file: " + this._file_upload.Name);
-                Debug.WriteLine("Name file:" + this._file_upload.Path);
+                Debug.WriteLine("Name file: " + file_upload.Name);
+                Debug.WriteLine("Name file:" + file_upload.Path);
                 this._explorateur_windows = false;
+                var client = new ImgurClient(this._clientID, this._clientSECRET);
+                var endpoint = new ImageEndpoint(client);
+                var file = System.IO.File.ReadAllBytes(@file_upload.Path);
+                var image = await endpoint.UploadImageBinaryAsync(file, "" , file_upload.Name, "");
             }
             this._explorateur_windows = false;
         }

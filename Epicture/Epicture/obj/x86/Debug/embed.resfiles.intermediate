@@ -1,4 +1,5 @@
 App.xbf
+PageApp\Connect\Connection.xbf
 PageApp\HomePage\ExtendedSplash.xbf
 PageApp\PageGallery\MainPage.xbf
 PageApp\SimplePhoto\SimplePhotoPage.xbf

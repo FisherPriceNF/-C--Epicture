@@ -16,7 +16,7 @@ using Windows.UI.Xaml.Media.Imaging;
 
 namespace Epicture.PageApp.PageGallery.GestionGallery
 {
-    class Photo
+    class CPhoto
     {
         private Grid _principal;
         private TextBlock _title;
@@ -52,7 +52,7 @@ namespace Epicture.PageApp.PageGallery.GestionGallery
             }
         }
 
-        public Photo(String name, String path, ref MainPage page)
+        public CPhoto(String name, String path, ref MainPage page)
         {
             this._name = name;
             this._path = path;
@@ -73,13 +73,14 @@ namespace Epicture.PageApp.PageGallery.GestionGallery
             return this._principal;
         }
 
+        // Initisalition page.
         private void initGridPrincipal()
         {
             this._principal = new Grid();
             this._principal.Name = this._name;
             this._principal.Width = _size[0];
             this._principal.Height = _size[1];
-            this._principal.PointerPressed += PointerPressed;
+            this._principal.PointerPressed += ClickImage;
 
             SolidColorBrush color = new SolidColorBrush();
             color.Color = Color.FromArgb(255, 48, 139, 87);
@@ -94,23 +95,6 @@ namespace Epicture.PageApp.PageGallery.GestionGallery
             _principal.RowDefinitions.Add(rowTitle);
         }
 
-        private void PointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            Debug.WriteLine("J'ai click sur " + this._name + " de path :" + _path + " .");
-
-            var Frame = Window.Current.Content as Frame;
-            if (Frame != null)
-            {
-                SimplePhotoPage page = new SimplePhotoPage(this._name, this._path, ref this._page);
-                Frame.Content = page;
-                Window.Current.Content = Frame;
-                if (Frame.Content == null)
-                {
-                    Frame.Navigate(typeof(SimplePhotoPage));
-                }
-            }
-        }
-
         private void initTextBox()
         {
             this._title = new TextBlock();
@@ -118,10 +102,9 @@ namespace Epicture.PageApp.PageGallery.GestionGallery
             this._title.FontFamily = new FontFamily("Segeo UI");
             this._title.TextWrapping = TextWrapping.Wrap;
             this._title.Text = this._name;
-            this._title.Width = 100;
-            this._title.Height = 20;
             this._title.FontSize = 16;
             this._title.VerticalAlignment = VerticalAlignment.Top;
+            this._title.HorizontalAlignment = HorizontalAlignment.Center;
             if (this._principal != null)
             {
                 Grid.SetRow(this._title, 1);
@@ -138,6 +121,7 @@ namespace Epicture.PageApp.PageGallery.GestionGallery
             this._image.Stretch = Stretch.Fill;
             if (this._path != null)
             {
+                Debug.WriteLine("Lien :" + _path);
                 this._image.Source = new BitmapImage(new Uri(_path));
                 this._image.Visibility = Visibility.Visible;
             }
@@ -145,6 +129,24 @@ namespace Epicture.PageApp.PageGallery.GestionGallery
             if (this._principal != null)
             {
                 _principal.Children.Add(this._image);
+            }
+        }
+
+        // Evenement si on click sur une image.
+        private void ClickImage(object sender, PointerRoutedEventArgs e)
+        {
+            Debug.WriteLine("J'ai click sur " + this._name + " de path :" + _path + " .");
+
+            var Frame = Window.Current.Content as Frame;
+            if (Frame != null)
+            {
+                SimplePhotoPage page = new SimplePhotoPage(this._name, this._path, ref this._page);
+                Frame.Content = page;
+                Window.Current.Content = Frame;
+                if (Frame.Content == null)
+                {
+                    Frame.Navigate(typeof(SimplePhotoPage));
+                }
             }
         }
     }

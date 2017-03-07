@@ -16,7 +16,6 @@ namespace Epicture.PageApp.SimplePhoto
         private Grid _parent;
         private int _position;
         private string _nameGrid;
-        private string _path;
         private SolidColorBrush _color;
         private Grid _principal;
 

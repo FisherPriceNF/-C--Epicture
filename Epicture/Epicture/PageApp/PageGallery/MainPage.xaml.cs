@@ -12,6 +12,8 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Epicture.PageApp.PageGallery;
+using Windows.UI.ViewManagement;
+using Windows.Foundation;
 
 // Pour plus d'informations sur le modèle d'élément Page vierge, consultez la page http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -25,12 +27,28 @@ namespace Epicture
         private DBoxSearch _boxSearch;
         private DGallery _gallery;
         private DBoxUpload _upload;
-        //private FlipView _filpView;
+        private string _clientID;
+        private string _clientSECRET;
       
-        // --- Constructeur.  
-        public MainPage()
+        public string ClientID
         {
+            get { return _clientID; }
+        }
+
+        public string ClientSECRET
+        {
+            get { return _clientSECRET; }
+        }
+
+        // --- Constructeur.  
+        public MainPage(string clientID, string clientSecret)
+        {
+            this._clientID = clientID;
+            this._clientSECRET = clientSecret;
             this.InitializeComponent();
+
+            ApplicationView.PreferredLaunchViewSize = new Size(/*x*/600, /*y*/800);
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
 
             this.setColumn();
             SolidColorBrush colorBoxSearch = new SolidColorBrush();
@@ -43,7 +61,7 @@ namespace Epicture
 
             SolidColorBrush colorUpload = new SolidColorBrush();
             colorUpload.Color = Color.FromArgb(255, 0, 128, 0);
-            _upload = new DBoxUpload("BoxUpload", ref Principal, 2, colorUpload);
+            _upload = new DBoxUpload("BoxUpload", ref Principal, 2, colorUpload, clientID, clientSecret);
 
         }
 

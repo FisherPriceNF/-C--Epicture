@@ -22,7 +22,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="Epicture.exe" EntryPoint="Epicture.App">
-      <uap:VisualElements DisplayName="Epicture" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="The goal of this project is to use and implement online photo sharing API platforms. You must create a photo finder and browsing application for the Flickr and Imgur platforms. The different aspects of Android mobile development applications are to be taken into account during the creation of your project." BackgroundColor="transparent">
+      <uap:VisualElements DisplayName="epicture" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="The goal of this project is to use and implement online photo sharing API platforms. You must create a photo finder and browsing application for the Flickr and Imgur platforms. The different aspects of Android mobile development applications are to be taken into account during the creation of your project." BackgroundColor="transparent">
         <uap:LockScreen Notification="badge" BadgeLogo="Assets\BadgeLogo.jpg" />
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\Square71x71Logo.png" Square310x310Logo="Assets\Square310x310Logo.png">
           <uap:ShowNameOnTiles>
@@ -42,7 +42,7 @@
   <build:Metadata>
     <build:Item Name="TargetFrameworkMoniker" Value=".NETCore,Version=v5.0" />
     <build:Item Name="VisualStudio" Version="14.0" />
-    <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Community 2015" />
+    <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Professional 2015" />
     <build:Item Name="OperatingSystem" Version="10.0.14393.0 (rs1_release.160715-1616)" />
     <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="14.0.25431.1" />
     <build:Item Name="ProjectGUID" Value="{707C15EB-681B-4EF7-A740-75495CD57FA0}" />

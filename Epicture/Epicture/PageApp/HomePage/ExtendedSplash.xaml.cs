@@ -71,12 +71,12 @@ namespace Epicture.HomePage
 
         private async void DismissExtendedSplash()
         {
-            await Task.Delay(TimeSpan.FromSeconds(3));  // Delay for 3 seconds
+            await Task.Delay(TimeSpan.FromSeconds(5));  // Delay for 3 seconds
             rootFrame = new Frame();
-            MainPage mainPage = new MainPage();
-            rootFrame.Content = mainPage;
+            Connection page = new Connection();
+            rootFrame.Content = page;
             Window.Current.Content = rootFrame;
-            rootFrame.Navigate(typeof(MainPage));
+            rootFrame.Navigate(typeof(Connection));
         }
     }
 }

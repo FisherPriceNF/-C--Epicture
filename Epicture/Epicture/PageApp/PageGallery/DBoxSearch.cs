@@ -108,7 +108,18 @@ namespace Epicture.PageApp.PageGallery
             if (this._text_search.Text != "")
             {
                 Debug.WriteLine("Info search: " + this._text_search.Text);
+                traitementRechercher(this._text_search.Text);
             }
+        }
+
+        // Traitement de la recherche.
+        private void traitementRechercher(String search)
+        {
+            string[] separators = { ",", ";" };
+            string[] wordsSearch = search.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+
+            foreach (var word in wordsSearch)
+                Debug.WriteLine(word); 
         }
     }
 }

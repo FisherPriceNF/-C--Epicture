@@ -13,7 +13,6 @@ namespace Epicture.PageApp.SimplePhoto
         private int _position;
         private string _nameGrid;
         private string _path;
-        private string _name;
         private SolidColorBrush _color;
         private Grid _principal;
 
@@ -100,7 +99,6 @@ namespace Epicture.PageApp.SimplePhoto
 
         public void display(string path)
         {
-            this._image.Name = "image " + this._name;
             this._path = path;
             this._image.Source = new BitmapImage(new Uri(path));
         }

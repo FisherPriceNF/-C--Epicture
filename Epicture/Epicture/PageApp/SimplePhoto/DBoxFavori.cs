@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Imgur.API.Authentication.Impl;
+using Imgur.API.Endpoints.Impl;
+using Imgur.API.Models.Impl;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -22,6 +25,8 @@ namespace Epicture.PageApp.SimplePhoto
         private SolidColorBrush _color;
         private MainPage _page;
         private bool _etatfavori;
+        private string _clientID;
+        private string _clientSECRET;
 
         // --- Propriète.
         public String Name
@@ -76,6 +81,8 @@ namespace Epicture.PageApp.SimplePhoto
             this._position = position;
             this._color = color;
             this._page = page;
+            this._clientID = this._page.ClientID;
+            this._clientSECRET = this._page.ClientSECRET;           
             initGridPrincipal();
             initButtonFavori();
             initButtonPrecedent();
@@ -101,7 +108,7 @@ namespace Epicture.PageApp.SimplePhoto
             this._favori = new Button();
             this._favori.Name = "btn_favori";
             this._favori.Content = "Favori";
-            Image image = new Image();
+            Windows.UI.Xaml.Controls.Image image = new Windows.UI.Xaml.Controls.Image();
             image.Source = new BitmapImage(new Uri("http://icon-icons.com/icons2/935/PNG/512/favourites-star-outline-interface-symbol_icon-icons.com_73254.png"));
             this._favori.Content = image;
             this._favori.VerticalAlignment = VerticalAlignment.Center;
@@ -118,7 +125,7 @@ namespace Epicture.PageApp.SimplePhoto
             this._precedent = new Button();
             this._precedent.Name = "btn_favori";
             this._precedent.Content = "Favori";
-            Image image = new Image();
+            Windows.UI.Xaml.Controls.Image image = new Windows.UI.Xaml.Controls.Image();
             image.Source = new BitmapImage(new Uri("http://i-dollz.com/perso/img/icone_prev.png"));
             this._precedent.Content = image;
             this._precedent.VerticalAlignment = VerticalAlignment.Center;
@@ -145,9 +152,9 @@ namespace Epicture.PageApp.SimplePhoto
             }
         }
 
-        private void _favori_Click(object sender, RoutedEventArgs e)
+        private async void _favori_Click(object sender, RoutedEventArgs e)
         {
-            Image image = new Image();
+            Windows.UI.Xaml.Controls.Image image = new Windows.UI.Xaml.Controls.Image();
             if (_etatfavori == false)
             {
                 image.Source = new BitmapImage(new Uri("http://icon-icons.com/icons2/935/PNG/512/favourites-star-outline-interface-symbol_icon-icons.com_73254.png"));
@@ -159,6 +166,10 @@ namespace Epicture.PageApp.SimplePhoto
                 image.Source = new BitmapImage(new Uri("http://fr.seaicons.com/wp-content/uploads/2016/09/Places-favorites-icon.png"));
                 this._favori.Content = image;
                 _etatfavori = false;
+
+                var client = new ImgurClient(_clientID , _clientSECRET);
+                var endpoint = new ImageEndpoint(client);
+                var favorited = await endpoint.FavoriteImageAsync("IMAGE_ID");
             }
             Debug.WriteLine("Button favori Click a été click.");
         }

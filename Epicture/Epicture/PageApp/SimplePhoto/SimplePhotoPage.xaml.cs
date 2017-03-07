@@ -16,7 +16,6 @@ namespace Epicture
         private DBoxImage _image;
         private DTitleImage _title;
         private DBoxFavori _favori;
-        private MainPage _page; 
 
         public SimplePhotoPage(string name, string path, ref MainPage page)
         {
